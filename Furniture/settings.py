@@ -132,3 +132,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'authapp.FishUser'
 LOGIN_URL = '/auth/login/'
 
+DOMAIN_NAME = 'http://localhost:8000'
+
