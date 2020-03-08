@@ -1,0 +1,81 @@
+{% extends 'mainapp/base.html' %}
+
+{% load static %}
+
+{% block meta %}
+  <meta name="description" content="Ялтинский магазин мебели «Фиш» предлагает огромный выбор спальных гарнитуров, комодов, ортопедических матрасов, компьютерных столов кухонь индивидуальных и под заказ, шкафы — купе и многое другое. Осуществляем доставку мебели по вашему адресу."> 
+  <meta name="keywords" content="Ортопедические матрасы в Ялте, шкафы-купе в Ялте и Крыму, диваны в Ялте, Ялтинская мебель, доставка мебели по Ялте, сборка мебели, индивидуальная мебель, гарантия качества мебели, мебель от производителей в Ялте.">
+{% endblock meta %}
+
+{% block css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="/static/css/style_blog.css">
+{% endblock css %}
+
+{% block content %}
+  <!-- sections -->
+  <!-- Main layout -->
+  <section class="content">
+
+    <div class="icon-info">
+      <div class="container">
+        <div class="row  d-flex jusfy-contetnt-center">
+          <div class="col-md-4 icon ">
+            <div class="info">
+              <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a ">
+                <a href="#set-1" class="hi-icon hi-icon-sofa"> </a>
+              </div>
+                
+              <p class=" wow animated jello">	
+                В настоящее время вариации форм тумб столь разнообразны, что можно просто растеряться. В большей 
+                степени следует ориентироваться на стилистику интерьера и качества, специалисты магазина «Фиш» 
+                смогу Вам помочь, осуществить выбор по Вашим параметрам из многочисленных каталогов от производителей мебели. 
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 icon">
+            <div class="info">
+              <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a ">
+                <a href="#set-1" class="hi-icon hi-icon-rack"> </a>
+              </div>
+                
+              <p class="wow animated jello">	
+                Практически все производители мебели предлагают потребителям огромный ассортимент мебели. При выборе стоит 
+                довериться той торговой марке, которая хорошо себя зарекомендовала.  Мы знаем, чем Вам можно помочь!!! 
+                Именно у нас в магазине «Фиш», мебель от проверенных производителей, с реальным качеством товара за разумные деньги.  
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 icon">
+            <div class="info">
+              <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a ">
+                <a href="#set-1" class="hi-icon hi-icon-bed"> </a>
+              </div>
+                
+              <p class=" wow animated jello">		
+                Выбрать мебель для спальни в современном стиле не очень сложно, ведь разнообразие отдельных предметов и готовых 
+                комплектов в магазине «Фиш» поразит воображение даже самого требовательного покупателя. При Вашем выборе мы учтем 
+                все нюансы, размеры помещения, наличие освещения, отделку стен, полов и другие параметры. 
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- icon-info -->
+
+    <div class="view parallax" style="height: 100vh;">
+      <div class="mask rgba-blue-light">
+        <div class="container flex-center text-center">
+          <div class="row mt-5">
+            <div class="col-md-12 col-xl-8 mx-auto">
+              <img class="work" src="/static/img/404.png" alt="work">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+{% endblock content %}

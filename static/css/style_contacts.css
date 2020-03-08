@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Lobster", cursive;
+  src: url(../fonts/Lobster-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Roboto - Regular";
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+/* ----------FORM efects ---------- */
+.form-style {
+  /* The image used */
+  background-image: url("../img/sliders/slide5a.jpg");
+  background-size: cover;
+}
+
+/* ----------Icons info ---------- */
+.hi-icon-sofa:before {
+  content: "\e009";
+  background: url("../img/icons/icons.png") -833px 0px no-repeat;
+}
+
+.hi-icon-rack:before {
+  content: "\e00a";
+  background: url("../img/icons/icons.png") -902px 0px no-repeat;
+}
+
+.hi-icon-bed:before {
+  content: "\e002";
+  background: url("../img/icons/icons.png") -971px 0px no-repeat;
+}
+
+.cwhite {
+  color: white;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.bolder {
+  font-weight: bolder;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.mline {
+  position: relative;
+  width: 50%;
+  margin: 0.5rem auto;
+  height: 2px;
+}

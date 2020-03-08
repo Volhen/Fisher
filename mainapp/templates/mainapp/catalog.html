@@ -1,0 +1,165 @@
+{% extends 'mainapp/base.html' %}
+
+{% load static %}
+
+{% block meta %}
+  <meta name="description" content="Мебельный магазин «Фиш» г. Ялта. Продаем мебель (столы, стулья, шкафы-купе, модульные системы) в ассортименте и под заказ по Ялте и в Крыму. Производим доставку мебели в любую точку Большой Ялты и не только."> 
+  <meta name="keywords" content="Доступная мебель, Ялтинская мебель, купить шкаф-купе, мебельный магазин Ялты, лучший выбор мебели, мебель от лучших производителей, мебель на Киевской. Кресла в Ялте. Столы в Ялте. Шкафы-купе в Ялте. Кухни в Крыму.">
+{% endblock meta %}
+
+{% block css %}
+  {{ block.super }}
+  <link rel="stylesheet" href="/static/css/style_catalog.css">
+{% endblock css %}
+
+{% block content %}
+  <!-- sections -->
+  <!-- Main layout -->
+  <section class="content">
+
+    <div class="icon-info">
+      <div class="container">
+        <div class="row  d-flex jusfy-contetnt-center">
+          <div class="col-md-4 icon ">
+            <div class="info">
+              <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a ">
+                <a href="#set-1" class="hi-icon hi-icon-sofa"> </a>
+              </div>
+                
+              <p class=" wow animated jello">	
+                В магазине «Фиш» Вы найдете огромный выбор шкафов-купе, которые являются замечательной 
+                альтернативой распашным аналогам. Шкафы-купе  отлично впишутся в любой интерьер. 
+                Рациональное решение для рациональных людей. У нас шкафы-купе от 
+                ведущих производителей, мы гарантируем качество и надежность. 
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 icon">
+            <div class="info">
+              <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a ">
+                <a href="#set-1" class="hi-icon hi-icon-rack"> </a>
+              </div>
+                
+              <p class="wow animated jello">	
+                Обставить Вашу гостиную, кухню, спальню с помощью столов магазина «Фиш» -  
+                очень просто. Это огромный выбор столов от универсальных до специализированных. Современный дизайн 
+                в сочетании с минималистским подходом, придают этим столам непревзойденный вид, идеально 
+                подходящий для любого повседневного пространства.   
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-md-4 icon">
+            <div class="info">
+              <div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a ">
+                <a href="#set-1" class="hi-icon hi-icon-bed"> </a>
+              </div>
+                
+              <p class=" wow animated jello">		
+                Принесите легкую, деревенскую атмосферу в свой дом, с нашими компьютерными столами. Благодаря 
+                огромному ассортименту компьютерных столов, Вы сможете позволит организовать полноценное и удобное 
+                рабочее или учебное место. Дети и взрослые по достоинству оценят заботу специалистов одного из лучших магазинов мебели в Ялте.   
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- icon-info -->
+
+    <div class="view parallax" style="height: 100vh;">
+      <div class="mask rgba-blue-light">
+        <div class="container flex-center text-center">
+          <div class="row mt-5">
+            <div class="col-md-12 col-xl-8 mx-auto wow fadeIn">
+              <p class="display-3 font-weight-bold mb-2 wow fadeInDown" data-wow-delay="0.3s">Лучший выбор мебели в Ялте </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATAlLOG -->
+    <div class="catalogue" id="catalogue">
+      <div class="container">
+        <div class="padding-catalogue">
+          <h3>Каталог</h3>
+          <div class="sap_tabs">
+    
+            <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+    
+              <ul>
+                {% for element in links_menu %}
+                  {% if element.is_active %}
+                    <li class="resp-tab-item" aria-controls="{{ element.pk }}" role="tab">
+                      <span>{{ element.name }}</span>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+
+              {% if links_menu %}
+                {% for element in links_menu %}
+                  {% if element.is_active %}
+                    <div class="tab-1 resp-tab-content" aria-labelledby="{{ element.pk }}">
+                      
+                      <div class="facts">
+                        <div class="chairs">
+                    
+                          <div class="wrapper">
+                            <ul class="stage clearfix">
+
+                              {% if products %}
+                                {% for prod in products %}
+                                  {% if prod.is_active %}
+                                    {% if element.name == prod.category.name %}
+
+                                      <li class="col-md-3 scene">
+                                        <div class="frontview" onclick="return true">
+                                          <div class="price-tag"> <img src="/media/{{ prod.image }}" alt="image"></div>
+                                            <div class="info">
+                                              <div class="info-header">
+                                                <h4>{{ prod.name }}</h4>
+                                                <span class="rating">от {{ prod.price }} </span>
+                                                <span class="dollar">&#x20bd</span>
+                                                <p>{{ prod.short_desc }}</p>
+                                              </div>
+                                            </div>
+                                        </div>
+                                      </li>
+
+                                    {% endif %}
+                                  {% endif %}
+                                {% endfor %}
+                              {% else %}
+                                <h3>Каталог пустой!</h3>
+                              {% endif %}
+
+                            </ul>
+                          </div>
+                          <div class="clearfix"> </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              {% else %}
+                <h3>Каталог пустой!</h3>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"> </div>
+    </div> <!-- catalogue Ends here -->
+  </section>
+
+{% endblock content %}
+
+{% block js %}
+  {{ block.super }}
+  <!-- JS for EasyResponsive tab -->
+	<script type="text/javascript" src="{% static 'js/easyResponsiveTabs.js' %}"></script>
+{% endblock js %}

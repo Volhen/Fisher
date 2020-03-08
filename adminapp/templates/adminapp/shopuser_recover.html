@@ -1,0 +1,24 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block menu %}
+{% endblock %}
+
+{% block container %}
+    <div class="container w-50 ml-auto mr-auto">
+        Уверены, что хотите  востановить<b>{{ object.username }}
+        {% if user_to_recover.first_name %}
+            ({{ user_to_recover.first_name|title }}
+                {% if user_to_recover.last_name %}
+                    {{ user_to_recover.last_name|title }}
+                {% endif %})
+        {% endif %}</b>?
+        <form method="post">
+            {% csrf_token %}
+            <input class="btn btn-danger btn-block mt-1" type="submit" value="востановить">
+        </form>
+        <a href="{% url 'myadmin:index' %}" class="btn btn-success btn-block mt-1">
+            отмена
+        </a>
+    </div>
+{% endblock %}

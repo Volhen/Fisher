@@ -1,0 +1,21 @@
+{% extends 'authapp/base.html' %}
+{% load static %}
+
+
+{% block container %}
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <input class="form-control" type="submit" value="войти">
+    </form>
+    <a href="{% url 'main:index' %}" class="btn btn-round form-control">
+        на главную
+    </a>
+    {% comment %} # Для масштабирования
+    <a href="{#% url 'auth:register' %#}" class="btn btn-round form-control">
+        зарегистрироваться
+    </a> {% endcomment %}
+
+
+{% endblock %}

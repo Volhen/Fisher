@@ -1,0 +1,50 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+
+{% block container %}
+    <div class="container">
+        <a href="{% url 'myadmin:product_create' category.pk %}"
+            class="btn btn-primary col-2 mt-5 ml-5">
+                новый товар
+        </a>
+        {% for object in object_list %}
+            <div class="row mt-5 h-10 {% if not object.is_active %}not_active{% endif %}">
+                <img class='col-3 ml-1 mr-1 prod_img' src="/media/{{ object.image|default:'products_images/default.jpg' }}"
+                    alt="{{ object.name }}">
+                <div class="col-2 ml-1 mr-1">
+                    {{ object.name|title }}
+                </div>
+                <div class="col-2 ml-1 mr-1">
+                    {% comment %} <a href="{#% url 'myadmin:card_read' object.pk %#}"
+                    class="btn btn-info btn-block">
+                        подробнее
+                    </a> {% endcomment %}
+                    <a href="{% url 'myadmin:product_update' object.pk %}"
+                    class="btn btn-success btn-block">
+                        редактировать
+                    </a>
+                    {% if object.is_active %}
+                        <a href="{% url 'myadmin:product_delete' object.pk %}" class="btn btn-danger btn-block">
+                            удалить
+                        </a>
+                    {% else %}
+                        <a href="{% url 'myadmin:product_recover' object.pk %}" class="btn btn-danger btn-block">
+                            восстановить
+                        </a>
+                    {% endif %}    
+                </div>
+                <div class="col-2 ml-1 mr-1">
+                    <b>цена</b>
+                    <p>{{ object.price }} &#x20bd </p>
+                    <b>количество</b>
+                    <p>{{ object.quantity }}</p>
+                </div>
+                <div class="col-2 ml-1 mr-1">
+                    {{ object.short_desc|title }} 
+                </div> 
+            </div>
+        {% endfor%}
+    </div>
+{% endblock %}
+

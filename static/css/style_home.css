@@ -1,0 +1,40 @@
+/* ----------Parallax efects ---------- */
+.parallax {
+  /* The image used */
+  background-image: url("../img/sliders/slide1.jpg");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax p {
+  color: #fff;
+}
+
+@media only screen and (max-device-width: 500px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* ----------Icons info ---------- */
+.hi-icon-sofa:before {
+  content: "\e009";
+  background: url("../img/icons/icons.png") 0px 0px no-repeat;
+}
+
+.hi-icon-rack:before {
+  content: "\e00a";
+  background: url("../img/icons/icons.png") -70px 0px no-repeat;
+}
+
+.hi-icon-bed:before {
+  content: "\e002";
+  background: url("../img/icons/icons.png") -140px 0px no-repeat;
+}
