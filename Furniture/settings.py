@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8nx9%ya(5h(mi=ahk*@h+4bwi=w)!f0f-_ag&#1xy)rcsgzljx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -132,5 +132,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'authapp.FishUser'
 LOGIN_URL = '/auth/login/'
 
-DOMAIN_NAME = 'http://localhost:8000'
+#DOMAIN_NAME = 'http://localhost:8000'
+DOMAIN_NAME = 'http://localhost'
 
